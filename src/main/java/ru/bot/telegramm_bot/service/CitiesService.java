@@ -7,6 +7,7 @@ import ru.bot.telegramm_bot.repository.CityRepository;
 
 @Component
 public class CitiesService {
+    @Autowired
     CityRepository cityRepository;
 
     public CitiesService() {
@@ -16,12 +17,9 @@ public class CitiesService {
         this.cityRepository = cityRepository;
     }
 
-    public String getCity(String city) {
-        String answer = "";
-        Cities cities = cityRepository.findByCityName("Минск");
-        System.out.println(cities);
-
-        return answer;
+    public Cities getCity(String city) {
+        city = city.toLowerCase().split(" ", 1)[0];
+        return cityRepository.findByCityName(city);
     }
 
 }
