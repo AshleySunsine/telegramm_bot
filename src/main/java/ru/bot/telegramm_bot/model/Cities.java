@@ -11,7 +11,7 @@ public class Cities {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String city_name;
+    private String cityName;
 
     @OneToMany
     private List<Place> place = new ArrayList<>();
@@ -24,12 +24,12 @@ public class Cities {
         this.id = id;
     }
 
-    public String getCity_name() {
-        return city_name;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCity_name(String city_name) {
-        this.city_name = city_name;
+    public void setCityName(String city_name) {
+        this.cityName = city_name;
     }
 
     public List<Place> getPlace() {
@@ -45,19 +45,19 @@ public class Cities {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cities cities = (Cities) o;
-        return id == cities.id && Objects.equals(city_name, cities.city_name) && Objects.equals(place, cities.place);
+        return id == cities.id && Objects.equals(cityName, cities.cityName) && Objects.equals(place, cities.place);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, city_name, place);
+        return Objects.hash(id, cityName, place);
     }
 
     @Override
     public String toString() {
         return "Cities{" +
                 "id=" + id +
-                ", city_name='" + city_name + '\'' +
+                ", city_name='" + cityName + '\'' +
                 ", places=" + place +
                 '}';
     }

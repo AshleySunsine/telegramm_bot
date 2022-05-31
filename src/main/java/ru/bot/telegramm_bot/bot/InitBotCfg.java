@@ -1,0 +1,27 @@
+package ru.bot.telegramm_bot.bot;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
+
+@Configuration
+public class InitBotCfg {
+
+    @Bean
+    public BotStarter getBotStarter() {
+        return new BotStarter();
+    }
+
+    @Bean
+    public TelegramBotsApi getTelegramsBotApi(BotStarter botStarter) {
+        TelegramBotsApi telegramBotsApi = null;
+        try {
+        telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+            telegramBotsApi.registerBot(getBotStarter());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return telegramBotsApi;
+    }
+}
