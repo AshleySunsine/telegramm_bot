@@ -18,6 +18,29 @@
     <div class="row">
         <h4>Форум job4j</h4>
     </div>
+    <form name='login' action="<c:url value='/addCity'/>" method='POST'>
+        <div style="margin-left:30px;">
+            <div class="col-md-6 mb-3">
+                <label for="cityName">Название города:</label>
+                <input type="text" class="form-control" id="cityName" name="cityName" value="${cities.cityName}" required>
+            </div>
+        <div class="col-md-6 mb-3">
+            <label for="placeName">Название места:</label>
+            <input type="text" class="form-control" id="placeName" name="placeName" value="${place.placeName}" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="placeDiscript">Описание места:</label>
+            <textarea class="form-control" id="placeDiscript" name="placeDiscript" required>${place.placeDiscript}
+            </textarea>
+            <div class="feedback">
+                Please enter a post description.
+            </div>
+        </div>
+</div>
+<button class="btn btn-primary" type="submit">Сохранить</button>
+    </form>
+
     <div class="row">
         <table class="table">
             <thead>
