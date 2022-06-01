@@ -50,7 +50,7 @@ public class CitiesService {
     }
 
     public void deleteCity(int cityId) {
-        cityRepository.deleteById((long)cityId);
+        cityRepository.deleteById((long) cityId);
     }
 
     public Cities deletePlace(int cityId, int placeId) {

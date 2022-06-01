@@ -43,8 +43,12 @@ public class Place {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Place place = (Place) o;
         return id == place.id && Objects.equals(placeName, place.placeName) && Objects.equals(placeDiscript, place.placeDiscript);
     }
@@ -56,10 +60,10 @@ public class Place {
 
     @Override
     public String toString() {
-        return "Place{" +
-                "id=" + id +
-                ", placeName='" + placeName + '\'' +
-                ", placeDiscript='" + placeDiscript + '\'' +
-                '}';
+        return "Place{"
+               + "id=" + id
+               + ", placeName='" + placeName + '\''
+               + ", placeDiscript='" + placeDiscript + '\''
+               + '}';
     }
 }

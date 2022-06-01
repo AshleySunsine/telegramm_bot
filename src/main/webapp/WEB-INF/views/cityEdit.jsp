@@ -57,7 +57,7 @@
                         <a href="<c:url value='/editPlace?placeId=${place.id}&cityId=${city.id}'/>">Изменить место</a>
                     </td>
                     <td>
-                        <form action="<c:url value='/deletePlace?placeId=${place.id}&cityId=${city.id}'/>"  method='POST'>
+                        <form action="<c:url value='/deletePlace?placeId=${place.id}&cityId=${city.id}'/>"method='POST'>
                             <a href="#" onclick="parentNode.submit();">Удалить место</a>
                             <input type="hidden" name="img" value=""/>
                         </form>

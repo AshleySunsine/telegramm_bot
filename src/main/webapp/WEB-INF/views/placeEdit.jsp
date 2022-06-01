@@ -18,9 +18,9 @@
     <div class="row">
         <h4>Редактируем место: <c:out value="${place.placeName}"/></h4>
     </div>
-    <form name='saveCityPlace' action="<c:url value='/addPlaceFromEditPlace'/>" method='POST'>
+    <form name='saveCityPlace' action="<c:url value='/addPlaceFromEditPlace?cityId=${city.id}'/>" method='POST'>
         <input type="hidden" id="id" name="id" value="<c:out value="${place.id}"/>">
-        <input type="hidden" id="cityId" name="cityId" value="<c:out value="${city.cityId}"/>">
+        <input type="hidden" id="cityId" name="cityId" value="<c:out value="${city.id}"/>">
         <div style="margin-left:30px;">
         <div class="col-md-6 mb-3">
             <label for="placeName">Название места:</label>
@@ -38,19 +38,6 @@
 </div>
 <button class="btn btn-primary" type="submit">Сохранить место</button>
     </form>
-    <div class="row">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Место</th>
-                <th scope="col">Описание</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-    </div>
 </div>
 
 

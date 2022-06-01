@@ -32,8 +32,12 @@ public class Phrases {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Phrases phrases = (Phrases) o;
         return id == phrases.id && Objects.equals(phrase, phrases.phrase);
     }
@@ -45,9 +49,9 @@ public class Phrases {
 
     @Override
     public String toString() {
-        return "Phrases{" +
-                "id=" + id +
-                ", phrase='" + phrase + '\'' +
-                '}';
+        return "Phrases{"
+               + "id=" + id
+               + ", phrase='" + phrase + '\''
+               + '}';
     }
 }

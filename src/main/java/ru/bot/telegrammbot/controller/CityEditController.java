@@ -38,9 +38,14 @@ public class CityEditController {
     }
 
     @GetMapping(value = { "/editPlace" })
-    public String editCity(@RequestParam("id") int id, @RequestParam("cityId") int cityId, Model model) {
-        model.addAttribute("place", placeService.getPlaceById(id));
-        model.addAttribute("city", citiesService.getCityById(cityId));
+    public String editCity(@RequestParam("cityId") int cityId,
+                           @RequestParam("placeId") int placeId,
+                           Model model) {
+        Cities c = citiesService.getCityById(cityId);
+        Place p = placeService.getPlaceById(placeId);
+        System.out.println("PPPPP " + c.toString() + p.toString());
+        model.addAttribute("place", p);
+        model.addAttribute("city", c);
         return "placeEdit";
     }
 }
