@@ -16,30 +16,28 @@
 <body>
 <div class="container mt-3">
     <div class="row">
-        <h4>Редактируем город: <c:out value="${city.cityName}"/></h4>
+        <h4>Редактируем место: <c:out value="${place.placeName}"/></h4>
     </div>
-    <form name='saveCityPlace' action="<c:url value='/addCityFromEditCity'/>" method='POST'>
+    <form name='saveCityPlace' action="<c:url value='/addPlaceFromEditPlace'/>" method='POST'>
+        <input type="hidden" id="id" name="id" value="<c:out value="${place.id}"/>">
+        <input type="hidden" id="cityId" name="cityId" value="<c:out value="${city.cityId}"/>">
         <div style="margin-left:30px;">
-            <div class="col-md-6 mb-3">
-                <label for="cityName">Название города:</label>
-                <input type="text" class="form-control" id="cityName" name="cityName" value="<c:out value="${city.cityName}"/>" required>
-            </div>
         <div class="col-md-6 mb-3">
             <label for="placeName">Название места:</label>
             <input type="text" class="form-control" id="placeName" name="placeName" value="<c:out value="${place.placeName}"/>" required>
+
         </div>
 
         <div class="col-md-6">
             <label for="placeDiscript">Описание места:</label>
             <textarea class="form-control" id="placeDiscript" name="placeDiscript" maxlength="250" required><c:out value="${place.placeDiscript}"/></textarea>
             <div class="feedback">
-                Введите название места и его описание
+                Редактируйте название места и его описание
             </div>
         </div>
 </div>
 <button class="btn btn-primary" type="submit">Сохранить место</button>
     </form>
-
     <div class="row">
         <table class="table">
             <thead>
@@ -49,25 +47,12 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${city.place}" var="place">
-                <tr>
-                    <td><c:out value="${place.placeName}"/></td>
-                    <td><c:out value="${place.placeDiscript}"/></td>
-                    <td>
-                        <a href="<c:url value='/editPlace?placeId=${place.id}&cityId=${city.id}'/>">Изменить место</a>
-                    </td>
-                    <td>
-                        <form action="<c:url value='/deletePlace?placeId=${place.id}&cityId=${city.id}'/>"  method='POST'>
-                            <a href="#" onclick="parentNode.submit();">Удалить место</a>
-                            <input type="hidden" name="img" value=""/>
-                        </form>
-                    </td>
-                </tr>
-            </c:forEach>
+
             </tbody>
         </table>
     </div>
 </div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

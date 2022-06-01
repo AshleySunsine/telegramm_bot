@@ -28,6 +28,9 @@ public class Cities {
         return cityName;
     }
 
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
 
     public List<Place> getPlace() {
         return place;

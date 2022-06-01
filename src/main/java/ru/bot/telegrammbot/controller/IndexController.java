@@ -30,7 +30,6 @@ public class IndexController {
 
     @GetMapping(value = { "/editCity" })
     public String editCity(@RequestParam("id") int id, Model model) {
-
         model.addAttribute("city", citiesService.getCityById(id));
         return "cityEdit";
     }
