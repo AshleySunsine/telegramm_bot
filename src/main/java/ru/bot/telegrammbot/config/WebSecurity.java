@@ -1,4 +1,4 @@
-package ru.bot.telegramm_bot.config;
+package ru.bot.telegrammbot.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

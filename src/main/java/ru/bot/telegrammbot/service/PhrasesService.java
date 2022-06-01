@@ -1,8 +1,8 @@
-package ru.bot.telegramm_bot.service;
+package ru.bot.telegrammbot.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.bot.telegramm_bot.repository.PhrasesRepository;
+import ru.bot.telegrammbot.repository.PhrasesRepository;
 
 @Component
 public class PhrasesService {

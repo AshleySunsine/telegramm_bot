@@ -51,17 +51,17 @@ alter table cities_place
 
 
 
-insert into public.cities (id, city_name) values (1, 'Минск');
-insert into public.cities (id, city_name) values (2, 'Брест');
-insert into public.cities (id, city_name) values (3, 'Гродно');
+insert into public.cities (city_name) values ('Минск');
+insert into public.cities (city_name) values ('Брест');
+insert into public.cities (city_name) values ('Гродно');
 
-insert into public.place (id, place_discript, place_name) values (1, 'Памятник защитникам Брестской крепости, созданный по проекту московского архитектора А.П. Кибальникова и воздвигнутый на площади Церемониалов в 1971 году.', 'Монумент «Мужество»');
-insert into public.place (id, place_discript, place_name) values (2, 'Национальная библиотека Беларуси, возглавляя систему библиотек страны, является хранительницей мощного информационного ресурса.', 'Национальная библиотека Беларуси');
-insert into public.place (id, place_discript, place_name) values (3, 'памятник архитектуры древнерусского каменного зодчества, XII века.', 'Борисоглебская (Коложская) церковь');
+insert into public.place (place_discript, place_name) values ('Памятник защитникам Брестской крепости, созданный по проекту московского архитектора А.П. Кибальникова и воздвигнутый на площади Церемониалов в 1971 году.', 'Монумент «Мужество»');
+insert into public.place (place_discript, place_name) values ('Национальная библиотека Беларуси, возглавляя систему библиотек страны, является хранительницей мощного информационного ресурса.', 'Национальная библиотека Беларуси');
+insert into public.place (place_discript, place_name) values ('Памятник архитектуры древнерусского каменного зодчества, XII века.', 'Борисоглебская (Коложская) церковь');
 
-insert into public.phrases (id, phrase) values (1, 'Не забудте посетить:');
-insert into public.phrases (id, phrase) values (2, 'Загляните сюда:');
-insert into public.phrases (id, phrase) values (3, 'Не проезжайте мимо: ');
+insert into public.phrases (phrase) values ('Не забудте посетить:');
+insert into public.phrases (phrase) values ('Загляните сюда:');
+insert into public.phrases (phrase) values ('Не проезжайте мимо: ');
 
 insert into public.cities_place (cities_id, place_id) values (1, 2);
 insert into public.cities_place (cities_id, place_id) values (2, 1);

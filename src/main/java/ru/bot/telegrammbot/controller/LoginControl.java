@@ -1,4 +1,4 @@
-package ru.bot.telegramm_bot.controller;
+package ru.bot.telegrammbot.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

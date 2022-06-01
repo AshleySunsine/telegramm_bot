@@ -1,4 +1,4 @@
-package ru.bot.telegramm_bot.model;
+package ru.bot.telegrammbot.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class Cities {
 
     private String cityName;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Place> place = new ArrayList<>();
 
     public long getId() {
@@ -28,9 +28,6 @@ public class Cities {
         return cityName;
     }
 
-    public void setCityName(String city_name) {
-        this.cityName = city_name;
-    }
 
     public List<Place> getPlace() {
         return place;
@@ -42,8 +39,12 @@ public class Cities {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Cities cities = (Cities) o;
         return id == cities.id && Objects.equals(cityName, cities.cityName) && Objects.equals(place, cities.place);
     }
@@ -55,10 +56,10 @@ public class Cities {
 
     @Override
     public String toString() {
-        return "Cities{" +
-                "id=" + id +
-                ", city_name='" + cityName + '\'' +
-                ", places=" + place +
-                '}';
+        return "Cities{"
+               + "id=" + id
+               + ", city_name='" + cityName + '\''
+               + ", places=" + place
+               + '}';
     }
 }

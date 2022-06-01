@@ -138,7 +138,9 @@
 							<version>${org.projectlombok.version}</version>
 						</path>
 					</annotationProcessorPaths>
-				</configuration>
+                    <source>10</source>
+                    <target>10</target>
+                </configuration>
 			</plugin>
 
 			<plugin>

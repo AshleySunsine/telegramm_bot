@@ -1,7 +1,7 @@
-package ru.bot.telegramm_bot.repository;
+package ru.bot.telegrammbot.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import ru.bot.telegramm_bot.model.Place;
+import ru.bot.telegrammbot.model.Place;
 
 public interface PlaceRepository extends CrudRepository<Place, Long> {
 }

@@ -11,56 +11,54 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Редактируем бота X2N</title>
+    <title>Редактируем город</title>
 </head>
 <body>
 <div class="container mt-3">
     <div class="row">
-        <h4>Редактируем бота X2N</h4>
+        <h4>Редактируем город: <c:out value="${city.cityName}"/></h4>
     </div>
-    <form name='saveCityPlace' action="<c:url value='/addCity'/>" method='POST'>
+    <form name='saveCityPlace' action="<c:url value='/addCityFromEditCity'/>" method='POST'>
         <div style="margin-left:30px;">
             <div class="col-md-6 mb-3">
                 <label for="cityName">Название города:</label>
                 <input type="text" class="form-control" id="cityName" name="cityName" value="<c:out value="${city.cityName}"/>" required>
             </div>
-            <div class="col-md-6 mb-3">
-                <label for="placeName">Название места:</label>
-                <input type="text" class="form-control" id="placeName" name="placeName" value="<c:out value="${place.placeName}"/>" required>
-            </div>
+        <div class="col-md-6 mb-3">
+            <label for="placeName">Название места:</label>
+            <input type="text" class="form-control" id="placeName" name="placeName" value="<c:out value="${place.placeName}"/>" required>
+        </div>
 
-            <div class="col-md-6">
-                <label for="placeDiscript">Описание места:</label>
-                <textarea class="form-control" id="placeDiscript" name="placeDiscript" maxlength="250" required><c:out value="${place.placeDiscript}"/></textarea>
-                <div class="feedback">
-                    Введите название места и его описание
-                </div>
+        <div class="col-md-6">
+            <label for="placeDiscript">Описание места:</label>
+            <textarea class="form-control" id="placeDiscript" name="placeDiscript" maxlength="250" required><c:out value="${place.placeDiscript}"/></textarea>
+            <div class="feedback">
+                Введите название места и его описание
             </div>
         </div>
-<button class="btn btn-primary" type="submit">Сохранить город и место</button>
+</div>
+<button class="btn btn-primary" type="submit">Сохранить место</button>
     </form>
 
     <div class="row">
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Город</th>
-                <th scope="col">
-                    Сведения
-                </th>
+                <th scope="col">Место</th>
+                <th scope="col">Описание</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${citiesList}" var="city">
+            <c:forEach items="${city.place}" var="place">
                 <tr>
-                    <td><c:out value="${city.cityName}"/></td>
-                    <td><c:out value="${city.place}"/></td>
+                    <td><c:out value="${place.placeName}"/></td>
+                    <td><c:out value="${place.placeDiscript}"/></td>
                     <td>
-                        <a href="<c:url value='/editCity?id=${city.id}'/>">Редактировать город</a>
+                        <a href="<c:url value='/EditPlace?id=${place.id}'/>">Изменить место</a>
                     </td>
                     <td>
-                        <form action="<c:url value='/deleteCity?cityId=${city.id}'/>"  method='POST'>
-                            <a href="#" onclick="parentNode.submit();">Удалить город</a>
+                        <form action="<c:url value='/deletePlace?placeId=${place.id}&cityId=${city.id}'/>"  method='POST'>
+                            <a href="#" onclick="parentNode.submit();">Удалить место</a>
                             <input type="hidden" name="img" value=""/>
                         </form>
                     </td>

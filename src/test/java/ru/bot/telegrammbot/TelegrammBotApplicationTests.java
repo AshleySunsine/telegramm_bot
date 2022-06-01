@@ -1,4 +1,4 @@
-package ru.bot.telegramm_bot;
+package ru.bot.telegrammbot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

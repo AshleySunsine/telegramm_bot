@@ -1,4 +1,4 @@
-package ru.bot.telegramm_bot;
+package ru.bot.telegrammbot;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

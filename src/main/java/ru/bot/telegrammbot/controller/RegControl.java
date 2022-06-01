@@ -1,4 +1,4 @@
-package ru.bot.telegramm_bot.controller;
+package ru.bot.telegrammbot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -6,9 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import ru.bot.telegramm_bot.model.User;
-import ru.bot.telegramm_bot.repository.AuthorityRepository;
-import ru.bot.telegramm_bot.repository.UserRepository;
+import ru.bot.telegrammbot.model.User;
+import ru.bot.telegrammbot.repository.AuthorityRepository;
+import ru.bot.telegrammbot.repository.UserRepository;
 
 
 @Controller

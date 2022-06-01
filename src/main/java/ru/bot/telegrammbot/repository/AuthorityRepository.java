@@ -1,8 +1,8 @@
-package ru.bot.telegramm_bot.repository;
+package ru.bot.telegrammbot.repository;
 
 
 import org.springframework.data.repository.CrudRepository;
-import ru.bot.telegramm_bot.model.Authority;
+import ru.bot.telegrammbot.model.Authority;
 
 public interface AuthorityRepository extends CrudRepository<Authority, Integer> {
 

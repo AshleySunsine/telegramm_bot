@@ -1,4 +1,4 @@
-package ru.bot.telegramm_bot.bot;
+package ru.bot.telegrammbot.bot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -6,11 +6,10 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import ru.bot.telegramm_bot.model.Cities;
-import ru.bot.telegramm_bot.model.Phrases;
-import ru.bot.telegramm_bot.model.Place;
-import ru.bot.telegramm_bot.service.CitiesService;
-import ru.bot.telegramm_bot.service.PhrasesService;
+import ru.bot.telegrammbot.model.Cities;
+import ru.bot.telegrammbot.model.Place;
+import ru.bot.telegrammbot.service.CitiesService;
+import ru.bot.telegrammbot.service.PhrasesService;
 
 import java.util.List;
 import java.util.Random;
@@ -23,8 +22,8 @@ public class BotStarter extends TelegramLongPollingBot {
     @Autowired
     private PhrasesService phrasesService;
 
-    private String BOT_NAME = "X2nExBot";
-    private String BOT_TOKEN = "5576451039:AAFBMalVfMOikJHD7R7JzhchBfVbA3TSxG8";
+    private final String botName = "X2nExBot";
+    private final String botToken = "5576451039:AAFBMalVfMOikJHD7R7JzhchBfVbA3TSxG8";
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -54,11 +53,11 @@ public class BotStarter extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return BOT_NAME;
+        return botName;
     }
 
     @Override
     public String getBotToken() {
-        return BOT_TOKEN;
+        return botToken;
     }
 }

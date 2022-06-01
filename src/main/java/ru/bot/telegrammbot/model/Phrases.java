@@ -1,4 +1,4 @@
-package ru.bot.telegramm_bot.model;
+package ru.bot.telegrammbot.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
