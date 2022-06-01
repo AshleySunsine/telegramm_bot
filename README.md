@@ -8,6 +8,7 @@
    и удалять любую информацию) необходимо через REST WebService.
    Используемые технологии: SpringBoot, SpringMVC, SpringData, Hibernate, Java не ниже 1.8.
    Для сборки проекта использовать Maven.
+4) 
 
 Для запуска необходимы:
  Имя бота: "X2nExBot";
