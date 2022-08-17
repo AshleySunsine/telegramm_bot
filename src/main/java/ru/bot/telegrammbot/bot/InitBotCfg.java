@@ -19,6 +19,7 @@ public class InitBotCfg {
     public CitiesService getCitiesService() {
         return new CitiesService();
     }
+
     @Bean
     public BotStarter getBotStarter() {
         return new BotStarter();
