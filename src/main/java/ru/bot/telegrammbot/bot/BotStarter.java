@@ -3,9 +3,11 @@ package ru.bot.telegrammbot.bot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import ru.bot.telegrammbot.bot.commands.ButtonCommand;
 import ru.bot.telegrammbot.model.Cities;
 import ru.bot.telegrammbot.model.Place;
 import ru.bot.telegrammbot.service.CitiesService;
@@ -15,7 +17,7 @@ import java.util.List;
 import java.util.Random;
 
 @Component
-public class BotStarter extends TelegramLongPollingBot {
+public class BotStarter extends TelegramLongPollingCommandBot {
     @Autowired
     private CitiesService citiesService;
 
@@ -25,8 +27,11 @@ public class BotStarter extends TelegramLongPollingBot {
     private final String botName = "X2nExBot";
     private final String botToken = "5576451039:AAFBMalVfMOikJHD7R7JzhchBfVbA3TSxG8";
 
-    @Override
-    public void onUpdateReceived(Update update) {
+    public BotStarter() {
+        register(new ButtonCommand("button", "Кнопки"));
+     }
+
+    public void updateReceived(Update update) {
         String cityString = update.getMessage().getText();
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -54,6 +59,11 @@ public class BotStarter extends TelegramLongPollingBot {
     @Override
     public String getBotUsername() {
         return botName;
+    }
+
+    @Override
+    public void processNonCommandUpdate(Update update) {
+        updateReceived(update);
     }
 
     @Override
