@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.bot.telegrammbot.model.Cities;
 import ru.bot.telegrammbot.model.Place;
-import ru.bot.telegrammbot.repository.PlaceRepository;
 import ru.bot.telegrammbot.service.CitiesService;
 import ru.bot.telegrammbot.service.PlaceService;
 

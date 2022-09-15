@@ -28,7 +28,7 @@ public class BotStarter extends TelegramLongPollingCommandBot {
     private final String botToken = "5576451039:AAFBMalVfMOikJHD7R7JzhchBfVbA3TSxG8";
 
     public BotStarter() {
-        register(new ButtonCommand("button", "Кнопки"));
+      //  register(new ButtonCommand("button", "Кнопки"));
      }
 
     public void updateReceived(Update update) {
