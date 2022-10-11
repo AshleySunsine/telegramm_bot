@@ -12,7 +12,7 @@
 
 Для запуска необходимы:
  Имя бота: "X2nExBot";
- Токен бота: "5576451039:AAFBMalVfMOikJHD7R7JzhchBfVbA3TSxG8";
+ Токен бота(изменён): "576451039:AAFBMalVfMOikJHD7R7JzhchBfVbA3TSxG8";
 
 Установить PostgreSQL базу данных. Создать базу "telegramm_bot". 
 Выполнить скрипт: recources/db/sequrity.schema
